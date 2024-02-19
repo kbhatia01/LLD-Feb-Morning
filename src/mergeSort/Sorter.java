@@ -44,6 +44,7 @@ public class Sorter implements Callable<List<Integer>> {
         List<Integer> leftSortedArray = futureLeftArray.get();
         List<Integer> rightSortedArray = futureRightArray.get();
 
+
         // merge:
         int i=0;
         int j=0;
