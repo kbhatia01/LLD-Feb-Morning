@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         List<Integer> a = List.of(8,1,7,5,6,4,3,9);
 
-        ExecutorService es = Executors.newCachedThreadPool();
+        ExecutorService es = Executors.newFixedThreadPool(10);
         Sorter s = new Sorter(a, es);
 
         Future<List<Integer>> ans = es.submit(s);

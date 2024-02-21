@@ -18,9 +18,9 @@ class main {
         ExecutorService es = Executors.newCachedThreadPool();
         for(int i=0;i<1000000;i++){
             PrintingNumber p = new PrintingNumber(i);
-//            Thread t = new Thread(p);
-//            t.start();
-            es.submit(p);
+            Thread t = new Thread(p);
+            t.start();
+//            es.submit(p);
 
         }
     }
