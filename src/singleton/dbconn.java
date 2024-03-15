@@ -4,6 +4,7 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class dbconn {
+
     private static dbconn instance = null;
 
     static Lock  l = new ReentrantLock();
