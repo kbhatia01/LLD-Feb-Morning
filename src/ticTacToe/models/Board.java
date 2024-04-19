@@ -25,4 +25,8 @@ public class Board {
     public void setGrid(List<List<Cell>> grid) {
         this.grid = grid;
     }
+
+    public void printBoard(){
+        // TODO: print board..
+    }
 }

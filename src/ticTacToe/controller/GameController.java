@@ -20,6 +20,14 @@ public class GameController {
 
 
     }
+
+    public void displayBoard(Game g){
+        g.getBoard().printBoard();
+    }
+
+    public void takeMove(Game g1){
+        // TODO: implement it..
+    }
 }
 
 
