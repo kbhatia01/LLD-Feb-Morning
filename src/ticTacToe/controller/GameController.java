@@ -1,6 +1,7 @@
 package ticTacToe.controller;
 
 import ticTacToe.Exceptions.InvalidBotCountException;
+import ticTacToe.Exceptions.PlayerSizeInvalid;
 import ticTacToe.models.Game;
 import ticTacToe.models.Player;
 import ticTacToe.stratergy.WinningStrategy;
@@ -11,7 +12,7 @@ public class GameController {
 
     public Game startGame(int size, List<Player> players,
                           List<WinningStrategy> winningStrategies)
-    throws InvalidBotCountException {
+            throws InvalidBotCountException, PlayerSizeInvalid {
 
         return Game.getBuilder().setDimension(size)
                 .setPlayers(players)

@@ -2,6 +2,7 @@ package ticTacToe.models;
 
 import inheritance.B;
 import ticTacToe.Exceptions.InvalidBotCountException;
+import ticTacToe.Exceptions.PlayerSizeInvalid;
 import ticTacToe.stratergy.WinningStrategy;
 
 import java.util.ArrayList;
@@ -123,7 +124,7 @@ public class Game {
             return this;
         }
 
-        public void validate() throws InvalidBotCountException{
+        public void validate() throws InvalidBotCountException, PlayerSizeInvalid {
             int botCount=0;
             for (Player p : players){
                 if(p.getPlayerType().equals(playerType.BOT)){
@@ -134,10 +135,10 @@ public class Game {
                 throw new InvalidBotCountException();
             }
             if (players.size() > dimension-1){
-                throw new RuntimeException();
+                throw new PlayerSizeInvalid();
             }
         }
-        public Game build() throws InvalidBotCountException {
+        public Game build() throws InvalidBotCountException, PlayerSizeInvalid {
             validate();
             return new Game(this.dimension, this.players,
                     this.ws);
