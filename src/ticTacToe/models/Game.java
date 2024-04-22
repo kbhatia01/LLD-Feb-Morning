@@ -1,9 +1,8 @@
 package ticTacToe.models;
 
-import inheritance.B;
 import ticTacToe.Exceptions.InvalidBotCountException;
 import ticTacToe.Exceptions.PlayerSizeInvalid;
-import ticTacToe.stratergy.WinningStrategy;
+import ticTacToe.stratergy.winning.WinningStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -143,6 +142,41 @@ public class Game {
             return new Game(this.dimension, this.players,
                     this.ws);
         }
+    }
+
+    public void MakeMove(){
+        Player currentPlayer = players.get(nextPlayerTurn);
+
+        Cell c = currentPlayer.decideCell(board);
+
+        if(c == null){
+            System.out.println("Invalid input");
+            return;
+        }
+
+        c.setPlayer(currentPlayer);
+        c.setCellStatus(CellStatus.FILLED);
+        moves.add(c);
+
+        if(checkWinner(board, c)){
+            gameStatus = GameStatus.SUCCESS;
+            winner = currentPlayer;
+        } else if (moves.size() == board.getSize()* board.getSize()) {
+            gameStatus = GameStatus.DRAW;
+        }
+        this.nextPlayerTurn +=1;
+        this.nextPlayerTurn = (players.size()+nextPlayerTurn)%players.size();
+
+    }
+
+
+    public boolean checkWinner(Board b, Cell c){
+        for (WinningStrategy winStr: winningStrategies){
+            if(winStr.checkWinner(c,b)){
+                return true;
+            }
+        }
+        return false;
     }
 
 

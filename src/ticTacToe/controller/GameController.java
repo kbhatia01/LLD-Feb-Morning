@@ -4,7 +4,7 @@ import ticTacToe.Exceptions.InvalidBotCountException;
 import ticTacToe.Exceptions.PlayerSizeInvalid;
 import ticTacToe.models.Game;
 import ticTacToe.models.Player;
-import ticTacToe.stratergy.WinningStrategy;
+import ticTacToe.stratergy.winning.WinningStrategy;
 
 import java.util.List;
 
@@ -27,7 +27,7 @@ public class GameController {
     }
 
     public void takeMove(Game g1){
-        // TODO: implement it..
+       g1.MakeMove();
     }
 }
 

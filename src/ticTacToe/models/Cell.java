@@ -39,4 +39,20 @@ public class Cell {
     }
 
     private CellStatus cellStatus;
+
+
+    public Cell(int row, int col){
+        this.row = row;
+        this.col = col;
+        this.player = null;
+        this.cellStatus = CellStatus.EMPTY;
+    }
+
+    public void display(){
+        if(player == null){
+            System.out.print("| - |");
+        } else {
+            System.out.print("| " + this.player.getSymbol().getSymbol() + " |");
+        }
+    }
 }

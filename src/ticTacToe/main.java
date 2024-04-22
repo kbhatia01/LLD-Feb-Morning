@@ -3,16 +3,39 @@ package ticTacToe;
 import ticTacToe.Exceptions.InvalidBotCountException;
 import ticTacToe.Exceptions.PlayerSizeInvalid;
 import ticTacToe.controller.GameController;
-import ticTacToe.models.Game;
-import ticTacToe.models.GameStatus;
+import ticTacToe.models.*;
+import ticTacToe.stratergy.winning.DiagonalWinningStrategy;
+import ticTacToe.stratergy.winning.RowWinningStrategy;
+import ticTacToe.stratergy.winning.WinningStrategy;
+import ticTacToe.stratergy.winning.columnWinningStrategy;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) throws InvalidBotCountException, PlayerSizeInvalid {
+
+        Scanner s = new Scanner(System.in);
         GameController gc = new GameController();
 
-        Game g1 = gc.startGame(3, new ArrayList<>(), new ArrayList<>());
+        //        System.out.println("Do you want row winning strategy.. press 1");
+//        int input = s.nextInt();
+//        if (input==1){
+//            ws.add( new RowWinningStrategy())
+//        }
+        int dimension = 3;
+        List<Player> p = new ArrayList<>();
+        p.add(new Player("Karan", 1, playerType.HUMAN, new Symbol('x')));
+        p.add(new Bot(2, "Bot", new Symbol('O'), BotDificulty.EASY));
+        List<WinningStrategy> ws = List.of(
+                new columnWinningStrategy(),
+                new RowWinningStrategy(),
+                new DiagonalWinningStrategy()
+        );
+
+
+        Game g1 = gc.startGame(3, p, ws);
 
         gc.displayBoard(g1);
 

@@ -1,5 +1,9 @@
 package ticTacToe.models;
 
+import inheritance.B;
+
+import java.util.Scanner;
+
 public class Player {
 
     private int id;
@@ -8,6 +12,8 @@ public class Player {
     private playerType playerType;
 
     private Symbol symbol;
+
+    Scanner scanner;
 
     public int getId() {
         return id;
@@ -39,5 +45,31 @@ public class Player {
 
     public void setSymbol(Symbol symbol) {
         this.symbol = symbol;
+    }
+
+    public Player(String name, int id, playerType type, Symbol s){
+        this.name=name;
+        this.id=id;
+        this.playerType=type;
+        this.symbol=s;
+        scanner = new Scanner(System.in);
+    }
+
+    public boolean validateInput(int row, int col){
+        return true;
+    }
+    public Cell decideCell(Board b){
+        System.out.println("Please mention a row..");
+        int row = scanner.nextInt();
+        System.out.println("Please mention a col..");
+        int col = scanner.nextInt();
+
+        if(!validateInput(row, col)){
+            System.out.println("Invalid Input");
+            return null;
+        }
+
+        return b.getGrid().get(row).get(col);
+
     }
 }
