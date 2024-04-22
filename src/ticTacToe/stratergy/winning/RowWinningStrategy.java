@@ -30,4 +30,13 @@ public class RowWinningStrategy implements WinningStrategy{
         return hs.get(s) == b.getSize();
 
     }
+
+    @Override
+    public void handleUndo(Cell c, Board b) {
+        int row = c.getRow();
+        Symbol s = c.getPlayer().getSymbol();
+        Map<Symbol, Integer> rowMap = counts.get(row);
+        rowMap.put(s, rowMap.get(s)-1);
+    }
+
 }

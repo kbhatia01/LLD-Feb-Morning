@@ -179,6 +179,25 @@ public class Game {
         return false;
     }
 
+    public void undo(){
+        if(moves.isEmpty()){
+            System.out.println("Nothing to undo..");
+            return;
+        }
+
+        Cell c = moves.getLast();
+        moves.removeLast();
+
+        for(WinningStrategy ws: winningStrategies){
+            ws.handleUndo(c, board);
+        }
+
+        c.setCellStatus(CellStatus.EMPTY);
+        c.setPlayer(null);
+        nextPlayerTurn -=1;
+        nextPlayerTurn = (players.size()+nextPlayerTurn)%players.size();
+
+    }
 
 
 

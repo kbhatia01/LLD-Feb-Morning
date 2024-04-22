@@ -41,6 +41,13 @@ public class main {
 
         while(g1.getGameStatus().equals(GameStatus.IN_PROGRESS)){
             gc.takeMove(g1);
+
+            System.out.println("Do you want to undo?, if yes press 1");
+            int undoAnswer = s.nextInt();
+            if(undoAnswer==1){
+                System.out.println("Undoying..");
+                gc.undo(g1);
+            }
             gc.displayBoard(g1);
         }
 

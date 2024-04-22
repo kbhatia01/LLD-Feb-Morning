@@ -29,6 +29,10 @@ public class GameController {
     public void takeMove(Game g1){
        g1.MakeMove();
     }
+
+    public void undo(Game g1){
+        g1.undo();
+    }
 }
 
 
