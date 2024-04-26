@@ -3,7 +3,7 @@ package parkinglot.models;
 import java.util.Date;
 import java.util.List;
 
-public class Bill {
+public class Bill extends BaseModel{
     Date exitTime;
 
     Ticket token;

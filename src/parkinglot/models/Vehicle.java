@@ -1,6 +1,6 @@
 package parkinglot.models;
 
-public class Vehicle {
+public class Vehicle extends BaseModel{
 
     String vehicleName;
 

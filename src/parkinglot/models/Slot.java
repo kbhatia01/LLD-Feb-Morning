@@ -1,6 +1,6 @@
 package parkinglot.models;
 
-public class Slot {
+public class Slot extends BaseModel{
     private int slotNumber;
     VehicleType vehicleType;
 

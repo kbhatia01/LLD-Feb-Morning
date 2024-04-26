@@ -1,6 +1,6 @@
 package parkinglot.models;
 
-public class Gate {
+public class Gate extends BaseModel{
     int GateNumber;
     GateType gateType;
 

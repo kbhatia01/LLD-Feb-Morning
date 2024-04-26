@@ -2,7 +2,7 @@ package parkinglot.models;
 
 import java.util.Date;
 
-public class Payment {
+public class Payment extends BaseModel{
     int Amount;
 
     PaymentModes paymentMode;

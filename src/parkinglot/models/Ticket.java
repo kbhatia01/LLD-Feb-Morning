@@ -2,7 +2,7 @@ package parkinglot.models;
 
 import java.util.Date;
 
-public class Ticket {
+public class Ticket  extends BaseModel{
     String number;
 
     Date entryTime;
