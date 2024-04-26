@@ -1,11 +1,10 @@
 package parkinglot.models;
 
-public enum ParkingLotStatus {
+public enum FloorStatus {
     OPEN,
     CLOSED,
 
     FULL,
 
     UNDER_MAINTENENCE
-
 }
