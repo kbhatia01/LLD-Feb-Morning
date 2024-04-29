@@ -4,8 +4,10 @@ public class Gate extends BaseModel{
     int GateNumber;
     GateType gateType;
 
-
+    ParkingLot parkingLot;
     GateStatus gateStatus;
+
+
 
     public int getGateNumber() {
         return GateNumber;
@@ -31,5 +33,13 @@ public class Gate extends BaseModel{
 
     public void setGateStatus(GateStatus gateStatus) {
         this.gateStatus = gateStatus;
+    }
+
+    public ParkingLot getParkingLot() {
+        return parkingLot;
+    }
+
+    public void setParkingLot(ParkingLot parkingLot) {
+        this.parkingLot = parkingLot;
     }
 }

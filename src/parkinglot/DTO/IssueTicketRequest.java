@@ -5,7 +5,7 @@ import parkinglot.models.VehicleType;
 public class IssueTicketRequest {
     private String vehicleNo;
 
-   private long gateId;
+   private int gateId;
 
     private String ownerName;
 
@@ -19,11 +19,11 @@ public class IssueTicketRequest {
         this.vehicleNo = vehicleNo;
     }
 
-    public long getGateId() {
+    public int getGateId() {
         return gateId;
     }
 
-    public void setGateId(long gateId) {
+    public void setGateId(int gateId) {
         this.gateId = gateId;
     }
 
